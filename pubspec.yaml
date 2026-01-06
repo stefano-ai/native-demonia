@@ -69,3 +69,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/
+    - assets/tiles/
+    - assets/sprites/

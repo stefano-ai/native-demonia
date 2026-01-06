@@ -124,7 +124,12 @@ class AssetManager {
 
     // Precache all images
     for (final imagePath in imagesToLoad) {
-      await precacheImage(AssetImage(imagePath), context);
+      try {
+        await precacheImage(AssetImage(imagePath), context);
+      } catch (e) {
+        // Ignore errors for missing assets during preload
+        // debugPrint('Failed to preload asset: $imagePath');
+      }
     }
   }
 }

@@ -181,7 +181,7 @@ class _TitleScreenState extends State<TitleScreen>
                 gradient: RadialGradient(
                   colors: [
                     Colors.transparent,
-                    Colors.black.withOpacity(0.7),
+                    Colors.black.withValues(alpha: 0.7),
                   ],
                   stops: const [0.4, 1.0],
                 ),
@@ -224,7 +224,7 @@ class _TitleScreenState extends State<TitleScreen>
                   offset: Offset(3, 3),
                 ),
                 Shadow(
-                  color: AppTheme.hellfire.withOpacity(0.8),
+                  color: AppTheme.hellfire.withValues(alpha: 0.8),
                   blurRadius: 30,
                 ),
               ],
@@ -368,7 +368,7 @@ class _MenuButtonState extends State<_MenuButton>
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(
                   color: Color.lerp(
-                    AppTheme.darkGold.withOpacity(0.5),
+                    AppTheme.darkGold.withValues(alpha: 0.5),
                     AppTheme.gold,
                     _hoverController.value,
                   )!,
@@ -377,7 +377,7 @@ class _MenuButtonState extends State<_MenuButton>
                 boxShadow: [
                   BoxShadow(
                     color: (widget.isPrimary ? AppTheme.hellfire : AppTheme.gold)
-                        .withOpacity(0.2 + _hoverController.value * 0.3),
+                        .withValues(alpha: 0.2 + _hoverController.value * 0.3),
                     blurRadius: 8 + _hoverController.value * 8,
                     spreadRadius: _hoverController.value * 2,
                   ),
@@ -397,7 +397,7 @@ class _MenuButtonState extends State<_MenuButton>
                   letterSpacing: 3,
                   shadows: [
                     Shadow(
-                      color: Colors.black.withOpacity(0.8),
+                      color: Colors.black.withValues(alpha: 0.8),
                       blurRadius: 4,
                     ),
                   ],
@@ -451,9 +451,9 @@ class _HellfireBackgroundPainter extends CustomPainter {
         begin: Alignment.bottomCenter,
         end: Alignment.topCenter,
         colors: [
-          const Color(0xFFFF6B00).withOpacity(0.8),
-          const Color(0xFFFF4500).withOpacity(0.6),
-          const Color(0xFFDC143C).withOpacity(0.3),
+          const Color(0xFFFF6B00).withValues(alpha: 0.8),
+          const Color(0xFFFF4500).withValues(alpha: 0.6),
+          const Color(0xFFDC143C).withValues(alpha: 0.3),
           Colors.transparent,
         ],
         stops: const [0.0, 0.3, 0.6, 1.0],
@@ -473,8 +473,8 @@ class _HellfireBackgroundPainter extends CustomPainter {
         center: const Alignment(0, 1),
         radius: 0.8,
         colors: [
-          AppTheme.hellfire.withOpacity(0.4),
-          AppTheme.crimson.withOpacity(0.2),
+          AppTheme.hellfire.withValues(alpha: 0.4),
+          AppTheme.crimson.withValues(alpha: 0.2),
           Colors.transparent,
         ],
         stops: const [0.0, 0.5, 1.0],
@@ -499,15 +499,15 @@ class _GothicFramePainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     // Left pillar
-    final leftPillarGradient = LinearGradient(
+    const leftPillarGradient = LinearGradient(
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
       colors: [
-        const Color(0xFF2A2A2A),
-        const Color(0xFF1A1A1A),
-        const Color(0xFF0A0A0A),
+        Color(0xFF2A2A2A),
+        Color(0xFF1A1A1A),
+        Color(0xFF0A0A0A),
       ],
-      stops: const [0.0, 0.5, 1.0],
+      stops: [0.0, 0.5, 1.0],
     );
 
     paint.shader = leftPillarGradient.createShader(
@@ -540,7 +540,7 @@ class _GothicFramePainter extends CustomPainter {
     canvas.drawPath(rightPillar, paint);
 
     // Gothic arch at top
-    final archGradient = LinearGradient(
+    const archGradient = LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: [
@@ -630,7 +630,7 @@ class _DemonSilhouettePainter extends CustomPainter {
 
     // Draw glow behind silhouette
     final glowPaint = Paint()
-      ..color = AppTheme.crimson.withOpacity(0.3 + glowIntensity * 0.2)
+      ..color = AppTheme.crimson.withValues(alpha: 0.3 + glowIntensity * 0.2)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 30);
 
     canvas.drawPath(silhouettePath, glowPaint);
@@ -643,7 +643,7 @@ class _DemonSilhouettePainter extends CustomPainter {
 
     // Draw glowing eyes
     final eyePaint = Paint()
-      ..color = AppTheme.hellfire.withOpacity(0.8 + glowIntensity * 0.2)
+      ..color = AppTheme.hellfire.withValues(alpha: 0.8 + glowIntensity * 0.2)
       ..maskFilter = MaskFilter.blur(BlurStyle.normal, 4 + glowIntensity * 4);
 
     canvas.drawCircle(

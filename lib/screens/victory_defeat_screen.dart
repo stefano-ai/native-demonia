@@ -64,7 +64,7 @@ class _VictoryScreenState extends State<VictoryScreen>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black.withOpacity(0.8),
+      color: Colors.black.withValues(alpha: 0.8),
       child: Center(
         child: AnimatedBuilder(
           animation: _controller,
@@ -96,7 +96,7 @@ class _VictoryScreenState extends State<VictoryScreen>
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppTheme.poison.withOpacity(0.4),
+                  color: AppTheme.poison.withValues(alpha: 0.4),
                   blurRadius: 20,
                   spreadRadius: 2,
                 ),
@@ -113,7 +113,7 @@ class _VictoryScreenState extends State<VictoryScreen>
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
-                        AppTheme.poison.withOpacity(0.3),
+                        AppTheme.poison.withValues(alpha: 0.3),
                         Colors.transparent,
                       ],
                     ),
@@ -137,7 +137,7 @@ class _VictoryScreenState extends State<VictoryScreen>
                     letterSpacing: 4,
                     shadows: [
                       Shadow(
-                        color: AppTheme.poison.withOpacity(0.5),
+                        color: AppTheme.poison.withValues(alpha: 0.5),
                         blurRadius: 10,
                       ),
                     ],
@@ -155,8 +155,8 @@ class _VictoryScreenState extends State<VictoryScreen>
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          AppTheme.rarityLegendary.withOpacity(0.8),
-                          AppTheme.gold.withOpacity(0.8),
+                          AppTheme.rarityLegendary.withValues(alpha: 0.8),
+                          AppTheme.gold.withValues(alpha: 0.8),
                         ],
                       ),
                       borderRadius: BorderRadius.circular(20),
@@ -204,7 +204,7 @@ class _VictoryScreenState extends State<VictoryScreen>
                         child: Text(
                           item,
                           style: TextStyle(
-                            color: AppTheme.boneWhite.withOpacity(0.9),
+                            color: AppTheme.boneWhite.withValues(alpha: 0.9),
                             fontSize: 14,
                           ),
                         ),
@@ -306,7 +306,7 @@ class _DefeatScreenState extends State<DefeatScreen>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black.withOpacity(0.9),
+      color: Colors.black.withValues(alpha: 0.9),
       child: Center(
         child: AnimatedBuilder(
           animation: _controller,
@@ -338,7 +338,7 @@ class _DefeatScreenState extends State<DefeatScreen>
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppTheme.crimson.withOpacity(0.4),
+                  color: AppTheme.crimson.withValues(alpha: 0.4),
                   blurRadius: 20,
                   spreadRadius: 2,
                 ),
@@ -355,7 +355,7 @@ class _DefeatScreenState extends State<DefeatScreen>
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
-                        AppTheme.crimson.withOpacity(0.3),
+                        AppTheme.crimson.withValues(alpha: 0.3),
                         Colors.transparent,
                       ],
                     ),
@@ -379,7 +379,7 @@ class _DefeatScreenState extends State<DefeatScreen>
                     letterSpacing: 4,
                     shadows: [
                       Shadow(
-                        color: AppTheme.darkCrimson.withOpacity(0.5),
+                        color: AppTheme.darkCrimson.withValues(alpha: 0.5),
                         blurRadius: 10,
                       ),
                     ],
@@ -392,7 +392,7 @@ class _DefeatScreenState extends State<DefeatScreen>
                   'Your hero has fallen in battle...',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: AppTheme.boneWhite.withOpacity(0.8),
+                    color: AppTheme.boneWhite.withValues(alpha: 0.8),
                     fontSize: 14,
                     fontStyle: FontStyle.italic,
                   ),
@@ -494,7 +494,7 @@ class _RewardRow extends StatelessWidget {
             Text(
               label,
               style: TextStyle(
-                color: AppTheme.boneWhite.withOpacity(0.7),
+                color: AppTheme.boneWhite.withValues(alpha: 0.7),
                 fontSize: 14,
               ),
             ),

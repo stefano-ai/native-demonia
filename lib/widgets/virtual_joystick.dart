@@ -94,7 +94,7 @@ class _VirtualJoystickState extends State<VirtualJoystick> {
         child: CustomPaint(
           painter: _JoystickPainter(
             knobPosition: _knobPosition,
-            baseColor: AppTheme.stoneGray.withOpacity(0.5),
+            baseColor: AppTheme.stoneGray.withValues(alpha: 0.5),
             knobColor: AppTheme.gold,
             highlightColor: AppTheme.hellfire,
             isActive: _currentDirection != JoystickDirection.none,
@@ -134,14 +134,14 @@ class _JoystickPainter extends CustomPainter {
 
     // Draw base border
     final borderPaint = Paint()
-      ..color = AppTheme.darkGold.withOpacity(0.5)
+      ..color = AppTheme.darkGold.withValues(alpha: 0.5)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
     canvas.drawCircle(center, baseRadius, borderPaint);
 
     // Draw direction indicators
     final indicatorPaint = Paint()
-      ..color = AppTheme.gold.withOpacity(0.3)
+      ..color = AppTheme.gold.withValues(alpha: 0.3)
       ..style = PaintingStyle.fill;
 
     final indicatorSize = size.width / 8;
@@ -189,7 +189,7 @@ class _JoystickPainter extends CustomPainter {
 
     // Draw knob shadow
     final shadowPaint = Paint()
-      ..color = Colors.black.withOpacity(0.3)
+      ..color = Colors.black.withValues(alpha: 0.3)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4);
     canvas.drawCircle(
       center + knobPosition + const Offset(2, 2),
@@ -213,7 +213,7 @@ class _JoystickPainter extends CustomPainter {
 
     // Draw knob highlight
     final highlightPaint = Paint()
-      ..color = Colors.white.withOpacity(0.3)
+      ..color = Colors.white.withValues(alpha: 0.3)
       ..style = PaintingStyle.fill;
     canvas.drawCircle(
       center + knobPosition + Offset(-knobRadius * 0.3, -knobRadius * 0.3),
@@ -226,80 +226,5 @@ class _JoystickPainter extends CustomPainter {
   bool shouldRepaint(covariant _JoystickPainter oldDelegate) {
     return knobPosition != oldDelegate.knobPosition ||
         isActive != oldDelegate.isActive;
-  }
-}
-
-class ActionButton extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final VoidCallback onPressed;
-  final Color? color;
-  final double size;
-
-  const ActionButton({
-    super.key,
-    required this.icon,
-    required this.label,
-    required this.onPressed,
-    this.color,
-    this.size = 56,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        GestureDetector(
-          onTap: onPressed,
-          child: Container(
-            width: size,
-            height: size,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  (color ?? AppTheme.hellfire).withOpacity(0.8),
-                  (color ?? AppTheme.darkCrimson),
-                ],
-              ),
-              border: Border.all(
-                color: AppTheme.gold.withOpacity(0.5),
-                width: 2,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: (color ?? AppTheme.hellfire).withOpacity(0.4),
-                  blurRadius: 8,
-                  spreadRadius: 1,
-                ),
-              ],
-            ),
-            child: Icon(
-              icon,
-              color: AppTheme.boneWhite,
-              size: size * 0.5,
-            ),
-          ),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(
-            color: AppTheme.boneWhite,
-            fontSize: 10,
-            fontWeight: FontWeight.w600,
-            shadows: [
-              Shadow(
-                color: Colors.black.withOpacity(0.8),
-                blurRadius: 4,
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
   }
 }

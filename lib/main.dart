@@ -153,7 +153,7 @@ class GameShell extends StatelessWidget {
             width: 2,
           ),
         ),
-        title: Text(
+        title: const Text(
           'SETTINGS',
           style: TextStyle(
             color: AppTheme.gold,
@@ -170,7 +170,7 @@ class GameShell extends StatelessWidget {
                 'Reduced Motion',
                 style: TextStyle(color: AppTheme.boneWhite),
               ),
-              subtitle: Text(
+              subtitle: const Text(
                 'Disable battle animations',
                 style: TextStyle(
                   color: AppTheme.ashGray,
@@ -179,7 +179,7 @@ class GameShell extends StatelessWidget {
               ),
               value: provider.state.reducedMotion,
               onChanged: (_) => provider.toggleReducedMotion(),
-              activeColor: AppTheme.gold,
+              activeThumbColor: AppTheme.gold,
             ),
           ],
         ),
@@ -220,7 +220,7 @@ class GameShell extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
+            const Text(
               'MENU',
               style: TextStyle(
                 color: AppTheme.gold,
@@ -286,7 +286,7 @@ class GameShell extends StatelessWidget {
             width: 2,
           ),
         ),
-        title: Text(
+        title: const Text(
           'SAVE GAME',
           style: TextStyle(
             color: AppTheme.gold,
@@ -365,7 +365,7 @@ class _LoadGameDialogState extends State<_LoadGameDialog> {
           width: 2,
         ),
       ),
-      title: Text(
+      title: const Text(
         'LOAD GAME',
         style: TextStyle(
           color: AppTheme.gold,
@@ -442,8 +442,8 @@ class _SaveSlotTile extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: isEmpty
-              ? Colors.black.withOpacity(0.3)
-              : AppTheme.stoneGray.withOpacity(0.2),
+              ? Colors.black.withValues(alpha: 0.3)
+              : AppTheme.stoneGray.withValues(alpha: 0.2),
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: isEmpty
@@ -459,8 +459,8 @@ class _SaveSlotTile extends StatelessWidget {
               height: 36,
               decoration: BoxDecoration(
                 color: isEmpty
-                    ? AppTheme.stoneGray.withOpacity(0.3)
-                    : AppTheme.gold.withOpacity(0.2),
+                    ? AppTheme.stoneGray.withValues(alpha: 0.3)
+                    : AppTheme.gold.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Center(
@@ -478,7 +478,7 @@ class _SaveSlotTile extends StatelessWidget {
               child: isEmpty
                   ? Text(
                       isLoadMode ? 'Empty Slot' : 'New Save',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppTheme.ashGray,
                         fontSize: 14,
                       ),
@@ -495,7 +495,7 @@ class _SaveSlotTile extends StatelessWidget {
                         ),
                         Text(
                           'Lvl ${saveData!.character?.level ?? 1} ${saveData!.character?.className ?? ''} • ${saveData!.timeSinceLastSave}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: AppTheme.ashGray,
                             fontSize: 11,
                           ),
@@ -538,8 +538,8 @@ class _MenuOption extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
         decoration: BoxDecoration(
           color: isDestructive
-              ? AppTheme.crimson.withOpacity(0.1)
-              : Colors.black.withOpacity(0.3),
+              ? AppTheme.crimson.withValues(alpha: 0.1)
+              : Colors.black.withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isDestructive
@@ -567,7 +567,7 @@ class _MenuOption extends StatelessWidget {
             Icon(
               Icons.chevron_right,
               color: isDestructive
-                  ? AppTheme.crimson.withOpacity(0.5)
+                  ? AppTheme.crimson.withValues(alpha: 0.5)
                   : AppTheme.ashGray,
             ),
           ],

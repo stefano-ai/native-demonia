@@ -153,7 +153,7 @@ class GameShell extends StatelessWidget {
             width: 2,
           ),
         ),
-        title: Text(
+        title: const Text(
           'SETTINGS',
           style: TextStyle(
             color: AppTheme.gold,
@@ -170,7 +170,7 @@ class GameShell extends StatelessWidget {
                 'Reduced Motion',
                 style: TextStyle(color: AppTheme.boneWhite),
               ),
-              subtitle: Text(
+              subtitle: const Text(
                 'Disable battle animations',
                 style: TextStyle(
                   color: AppTheme.ashGray,
@@ -179,7 +179,7 @@ class GameShell extends StatelessWidget {
               ),
               value: provider.state.reducedMotion,
               onChanged: (_) => provider.toggleReducedMotion(),
-              activeColor: AppTheme.gold,
+              activeThumbColor: AppTheme.gold,
             ),
           ],
         ),
@@ -220,7 +220,7 @@ class GameShell extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
+            const Text(
               'MENU',
               style: TextStyle(
                 color: AppTheme.gold,
@@ -286,7 +286,7 @@ class GameShell extends StatelessWidget {
             width: 2,
           ),
         ),
-        title: Text(
+        title: const Text(
           'SAVE GAME',
           style: TextStyle(
             color: AppTheme.gold,
@@ -365,7 +365,7 @@ class _LoadGameDialogState extends State<_LoadGameDialog> {
           width: 2,
         ),
       ),
-      title: Text(
+      title: const Text(
         'LOAD GAME',
         style: TextStyle(
           color: AppTheme.gold,
@@ -478,7 +478,7 @@ class _SaveSlotTile extends StatelessWidget {
               child: isEmpty
                   ? Text(
                       isLoadMode ? 'Empty Slot' : 'New Save',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppTheme.ashGray,
                         fontSize: 14,
                       ),
@@ -495,7 +495,7 @@ class _SaveSlotTile extends StatelessWidget {
                         ),
                         Text(
                           'Lvl ${saveData!.character?.level ?? 1} ${saveData!.character?.className ?? ''} • ${saveData!.timeSinceLastSave}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: AppTheme.ashGray,
                             fontSize: 11,
                           ),

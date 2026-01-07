@@ -850,7 +850,7 @@ class _ImageBasedMapRenderer extends StatelessWidget {
               ),
             );
           });
-        }).expand((widgets) => widgets).toList(),
+        }).expand((widgets) => widgets),
 
         // Render player sprite
         Positioned(
@@ -867,7 +867,7 @@ class _ImageBasedMapRenderer extends StatelessWidget {
               errorBuilder: (context, error, stackTrace) {
                 // Fallback to simple colored circle for player
                 return Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppTheme.mana,
                     shape: BoxShape.circle,
                   ),
@@ -1021,7 +1021,7 @@ class _NpcSprite extends StatelessWidget {
         errorBuilder: (context, error, stackTrace) {
           // Fallback to colored circle for NPC
           return Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppTheme.stoneGray,
               shape: BoxShape.circle,
             ),
@@ -1053,7 +1053,7 @@ class _EnemySprite extends StatelessWidget {
         errorBuilder: (context, error, stackTrace) {
           // Fallback to colored circle for enemy
           return Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppTheme.crimson,
               shape: BoxShape.circle,
             ),
@@ -1672,7 +1672,7 @@ class _MapPainter extends CustomPainter {
 
   void _drawNpcSprite(Canvas canvas, Rect rect) {
     // NPC figure (similar to player but blue)
-    final npcColor = AppTheme.mana;
+    const npcColor = AppTheme.mana;
     
     // NPC shadow
     final shadowPaint = Paint()..color = Colors.black.withOpacity(0.3);

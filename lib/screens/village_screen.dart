@@ -131,7 +131,7 @@ class VillageScreen extends StatelessWidget {
                     ),
 
                     // Buildings in corners
-                    Positioned(
+                    const Positioned(
                       left: 16,
                       top: 16,
                       child: _VillageBuilding(
@@ -140,7 +140,7 @@ class VillageScreen extends StatelessWidget {
                         color: AppTheme.ember,
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       right: 16,
                       top: 16,
                       child: _VillageBuilding(
@@ -149,7 +149,7 @@ class VillageScreen extends StatelessWidget {
                         color: AppTheme.stoneGray,
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       left: 16,
                       bottom: 16,
                       child: _VillageBuilding(
@@ -158,7 +158,7 @@ class VillageScreen extends StatelessWidget {
                         color: AppTheme.poison,
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       right: 16,
                       bottom: 16,
                       child: _VillageBuilding(

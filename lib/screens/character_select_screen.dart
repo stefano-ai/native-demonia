@@ -491,7 +491,7 @@ class _StatRow extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             color: AppTheme.ashGray,
             fontSize: 12,
           ),

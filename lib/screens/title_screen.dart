@@ -499,7 +499,7 @@ class _GothicFramePainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     // Left pillar
-    final leftPillarGradient = LinearGradient(
+    const leftPillarGradient = LinearGradient(
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
       colors: [
@@ -540,7 +540,7 @@ class _GothicFramePainter extends CustomPainter {
     canvas.drawPath(rightPillar, paint);
 
     // Gothic arch at top
-    final archGradient = LinearGradient(
+    const archGradient = LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: [

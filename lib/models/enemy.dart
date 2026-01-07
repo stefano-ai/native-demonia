@@ -131,8 +131,8 @@ class Enemy {
           goldMin: 5,
           goldMax: 15,
           lootTable: [
-            LootDrop(itemId: 'potion_health_minor', dropChance: 0.2),
-            LootDrop(itemId: 'dagger_rusty', dropChance: 0.1),
+            const LootDrop(itemId: 'potion_health_minor', dropChance: 0.2),
+            const LootDrop(itemId: 'dagger_rusty', dropChance: 0.1),
           ],
         );
 
@@ -151,8 +151,8 @@ class Enemy {
           goldMin: 10,
           goldMax: 25,
           lootTable: [
-            LootDrop(itemId: 'bone_dust', dropChance: 0.3),
-            LootDrop(itemId: 'sword_iron', dropChance: 0.15),
+            const LootDrop(itemId: 'bone_dust', dropChance: 0.3),
+            const LootDrop(itemId: 'sword_iron', dropChance: 0.15),
           ],
         );
 
@@ -172,8 +172,8 @@ class Enemy {
           goldMax: 40,
           abilities: ['Attack', 'Rage'],
           lootTable: [
-            LootDrop(itemId: 'potion_health', dropChance: 0.25),
-            LootDrop(itemId: 'axe_orcish', dropChance: 0.1),
+            const LootDrop(itemId: 'potion_health', dropChance: 0.25),
+            const LootDrop(itemId: 'axe_orcish', dropChance: 0.1),
           ],
         );
 
@@ -194,7 +194,7 @@ class Enemy {
           isBoss: true,
           abilities: ['Attack', 'Cleave', 'War Cry'],
           lootTable: [
-            LootDrop(itemId: 'ring_power', dropChance: 1.0),
+            const LootDrop(itemId: 'ring_power', dropChance: 1.0),
           ],
           guaranteedDrop: 'caldera_key',
         );
@@ -215,8 +215,8 @@ class Enemy {
           goldMax: 35,
           abilities: ['Shadow Bolt', 'Curse'],
           lootTable: [
-            LootDrop(itemId: 'potion_mana', dropChance: 0.3),
-            LootDrop(itemId: 'staff_dark', dropChance: 0.08),
+            const LootDrop(itemId: 'potion_mana', dropChance: 0.3),
+            const LootDrop(itemId: 'staff_dark', dropChance: 0.08),
           ],
         );
 
@@ -237,7 +237,7 @@ class Enemy {
           isBoss: true,
           abilities: ['Shadow Strike', 'Void Blast', 'Summon Shadows'],
           lootTable: [
-            LootDrop(itemId: 'cloak_shadows', dropChance: 1.0),
+            const LootDrop(itemId: 'cloak_shadows', dropChance: 1.0),
           ],
           guaranteedDrop: 'sigil_fragment_shadow',
         );
@@ -258,7 +258,7 @@ class Enemy {
           goldMax: 30,
           abilities: ['Fireball', 'Flame Touch'],
           lootTable: [
-            LootDrop(itemId: 'ember_shard', dropChance: 0.25),
+            const LootDrop(itemId: 'ember_shard', dropChance: 0.25),
           ],
         );
 
@@ -279,7 +279,7 @@ class Enemy {
           isBoss: true,
           abilities: ['Hellfire Cleave', 'Infernal Nova', 'Summon Imps'],
           lootTable: [
-            LootDrop(itemId: 'infernal_core', dropChance: 1.0),
+            const LootDrop(itemId: 'infernal_core', dropChance: 1.0),
           ],
           guaranteedDrop: 'chapel_key',
         );
@@ -300,7 +300,7 @@ class Enemy {
           goldMax: 60,
           abilities: ['Frost Touch', 'Chilling Wail'],
           lootTable: [
-            LootDrop(itemId: 'frost_essence', dropChance: 0.3),
+            const LootDrop(itemId: 'frost_essence', dropChance: 0.3),
           ],
         );
 
@@ -321,7 +321,7 @@ class Enemy {
           isBoss: true,
           abilities: ['Frozen Slam', 'Blizzard', 'Ice Prison'],
           lootTable: [
-            LootDrop(itemId: 'glacial_heart', dropChance: 1.0),
+            const LootDrop(itemId: 'glacial_heart', dropChance: 1.0),
           ],
           guaranteedDrop: 'sigil_fragment_ice',
         );
@@ -342,7 +342,7 @@ class Enemy {
           goldMax: 100,
           abilities: ['Void Bolt', 'Phase Shift'],
           lootTable: [
-            LootDrop(itemId: 'void_shard', dropChance: 0.2),
+            const LootDrop(itemId: 'void_shard', dropChance: 0.2),
           ],
         );
 
@@ -368,7 +368,7 @@ class Enemy {
             'Dark Pact'
           ],
           lootTable: [
-            LootDrop(itemId: 'abyssal_crown', dropChance: 1.0),
+            const LootDrop(itemId: 'abyssal_crown', dropChance: 1.0),
           ],
           guaranteedDrop: 'sigil_fragment_void',
         );

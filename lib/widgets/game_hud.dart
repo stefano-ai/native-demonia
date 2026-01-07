@@ -33,13 +33,13 @@ class GameHUD extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Colors.black.withValues(alpha: 0.8),
-                      Colors.black.withValues(alpha: 0.6),
+                      Colors.black.withOpacity(0.8),
+                      Colors.black.withOpacity(0.6),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: AppTheme.darkGold.withValues(alpha: 0.5),
+                    color: AppTheme.darkGold.withOpacity(0.5),
                     width: 1,
                   ),
                 ),
@@ -58,7 +58,7 @@ class GameHUD extends StatelessWidget {
                               colors: [
                                 AppTheme.getClassColor(character.className),
                                 AppTheme.getClassColor(character.className)
-                                    .withValues(alpha: 0.5),
+                                    .withOpacity(0.5),
                               ],
                             ),
                             border: Border.all(
@@ -94,7 +94,7 @@ class GameHUD extends StatelessWidget {
                               Text(
                                 'Lvl ${character.level} ${character.className}',
                                 style: TextStyle(
-                                  color: AppTheme.boneWhite.withValues(alpha: 0.7),
+                                  color: AppTheme.boneWhite.withOpacity(0.7),
                                   fontSize: 11,
                                 ),
                               ),
@@ -111,7 +111,7 @@ class GameHUD extends StatelessWidget {
                             vertical: 4,
                           ),
                           decoration: BoxDecoration(
-                            color: Colors.black.withValues(alpha: 0.5),
+                            color: Colors.black.withOpacity(0.5),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Row(
@@ -224,10 +224,10 @@ class _StatBar extends StatelessWidget {
               Container(
                 height: 16,
                 decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha: 0.5),
+                  color: Colors.black.withOpacity(0.5),
                   borderRadius: BorderRadius.circular(4),
                   border: Border.all(
-                    color: color.withValues(alpha: 0.3),
+                    color: color.withOpacity(0.3),
                     width: 1,
                   ),
                 ),
@@ -241,13 +241,13 @@ class _StatBar extends StatelessWidget {
                     gradient: LinearGradient(
                       colors: [
                         color,
-                        color.withValues(alpha: 0.7),
+                        color.withOpacity(0.7),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(4),
                     boxShadow: [
                       BoxShadow(
-                        color: color.withValues(alpha: 0.5),
+                        color: color.withOpacity(0.5),
                         blurRadius: 4,
                       ),
                     ],
@@ -292,7 +292,7 @@ class _SpellSlotsBar extends StatelessWidget {
         Text(
           'Slots:',
           style: TextStyle(
-            color: AppTheme.boneWhite.withValues(alpha: 0.7),
+            color: AppTheme.boneWhite.withOpacity(0.7),
             fontSize: 10,
           ),
         ),
@@ -342,7 +342,7 @@ class _SlotIndicator extends StatelessWidget {
         Text(
           '$label:',
           style: TextStyle(
-            color: AppTheme.boneWhite.withValues(alpha: 0.5),
+            color: AppTheme.boneWhite.withOpacity(0.5),
             fontSize: 9,
           ),
         ),
@@ -355,15 +355,15 @@ class _SlotIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(left: 2),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: isFilled ? AppTheme.mana : Colors.black.withValues(alpha: 0.5),
+              color: isFilled ? AppTheme.mana : Colors.black.withOpacity(0.5),
               border: Border.all(
-                color: AppTheme.mana.withValues(alpha: 0.5),
+                color: AppTheme.mana.withOpacity(0.5),
                 width: 1,
               ),
               boxShadow: isFilled
                   ? [
                       BoxShadow(
-                        color: AppTheme.mana.withValues(alpha: 0.5),
+                        color: AppTheme.mana.withOpacity(0.5),
                         blurRadius: 4,
                       ),
                     ]
@@ -406,12 +406,12 @@ class _RankBadge extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             tierColor,
-            tierColor.withValues(alpha: 0.5),
+            tierColor.withOpacity(0.5),
           ],
         ),
         borderRadius: BorderRadius.circular(4),
         border: Border.all(
-          color: Colors.white.withValues(alpha: 0.3),
+          color: Colors.white.withOpacity(0.3),
           width: 1,
         ),
       ),
@@ -457,12 +457,12 @@ class _HUDButton extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: AppTheme.darkGold.withValues(alpha: 0.5),
+            color: AppTheme.darkGold.withOpacity(0.5),
             width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.3),
+              color: Colors.black.withOpacity(0.3),
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),

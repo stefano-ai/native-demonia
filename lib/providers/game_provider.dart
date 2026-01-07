@@ -81,14 +81,9 @@ class GameProvider extends ChangeNotifier {
 
     // Check for encounters
     if (tile.enemyType != null) {
-      // Direct encounter for 'E' tiles
-      if (tile.enemyType == 'boss') {
-        // Handle boss elsewhere or here? 
-        // For now, let random encounter logic decide or use _startBattle
-      }
       _triggerRandomEncounter();
     } else if (tile.type == TileType.chest && !tile.isOpened) {
-      _openChestFromTile(tile, newX, newY);
+      _openChest(newX, newY);
     } else if (tile.type == TileType.stairsDown || tile.type == TileType.stairsUp) {
       _handleStairs(tile);
     }
@@ -125,12 +120,8 @@ class GameProvider extends ChangeNotifier {
     }
   }
 
-  void _openChestFromTile(MapTile tile, int x, int y) {
-    final chestId = tile.chestId ?? '${_state.currentFloor}_${x}_$y';
-    _openChest(chestId);
-  }
-
-  void _openChest(String chestId) {
+  void _openChest(int x, int y) {
+    final chestId = '${_state.currentFloor}_${x}_$y';
     if (_state.openedChests.contains(chestId)) return;
 
     final random = math.Random();
@@ -168,7 +159,7 @@ class GameProvider extends ChangeNotifier {
   void _handleStairs(MapTile tile) {
     if (tile.targetFloor == null) return;
 
-    final targetFloor = int.tryParse(tile.targetFloor!) ?? 1;
+    final targetFloor = int.parse(tile.targetFloor!);
 
     // Check floor requirements
     if (targetFloor == 2 && !_state.character!.inventory.contains('caldera_key')) {
@@ -219,7 +210,9 @@ class GameProvider extends ChangeNotifier {
   }
 
   void openChest(String chestId) {
-    _openChest(chestId);
+    _state = _state.copyWith(
+      openedChests: Set.from(_state.openedChests)..add(chestId),
+    );
     notifyListeners();
   }
 

@@ -138,12 +138,12 @@ class _BattleScreenState extends State<BattleScreen>
                       gradient: LinearGradient(
                         colors: gameProvider.isPlayerTurn
                             ? [
-                                AppTheme.gold.withValues(alpha: 0.8),
-                                AppTheme.darkGold.withValues(alpha: 0.8),
+                                AppTheme.gold.withOpacity(0.8),
+                                AppTheme.darkGold.withOpacity(0.8),
                               ]
                             : [
-                                AppTheme.crimson.withValues(alpha: 0.8),
-                                AppTheme.darkCrimson.withValues(alpha: 0.8),
+                                AppTheme.crimson.withOpacity(0.8),
+                                AppTheme.darkCrimson.withOpacity(0.8),
                               ],
                       ),
                       borderRadius: BorderRadius.circular(20),
@@ -152,7 +152,7 @@ class _BattleScreenState extends State<BattleScreen>
                           color: (gameProvider.isPlayerTurn
                                   ? AppTheme.gold
                                   : AppTheme.crimson)
-                              .withValues(alpha: 0.4),
+                              .withOpacity(0.4),
                           blurRadius: 8,
                         ),
                       ],
@@ -209,7 +209,7 @@ class _BattleBackgroundPainter extends CustomPainter {
       final alpha = (1 - (baseY - y) / (size.height * 0.5)).clamp(0.0, 1.0);
 
       final particlePaint = Paint()
-        ..color = AppTheme.hellfire.withValues(alpha: alpha * 0.5)
+        ..color = AppTheme.hellfire.withOpacity(alpha * 0.5)
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4);
 
       canvas.drawCircle(
@@ -224,7 +224,7 @@ class _BattleBackgroundPainter extends CustomPainter {
       ..shader = RadialGradient(
         colors: [
           Colors.transparent,
-          Colors.black.withValues(alpha: 0.7),
+          Colors.black.withOpacity(0.7),
         ],
         stops: const [0.5, 1.0],
       ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
@@ -277,8 +277,8 @@ class _EnemySection extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    AppTheme.rarityLegendary.withValues(alpha: 0.8),
-                    AppTheme.hellfire.withValues(alpha: 0.8),
+                    AppTheme.rarityLegendary.withOpacity(0.8),
+                    AppTheme.hellfire.withOpacity(0.8),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(12),
@@ -304,7 +304,7 @@ class _EnemySection extends StatelessWidget {
               shape: BoxShape.circle,
               gradient: RadialGradient(
                 colors: [
-                  AppTheme.crimson.withValues(alpha: 0.3),
+                  AppTheme.crimson.withOpacity(0.3),
                   Colors.transparent,
                 ],
               ),
@@ -390,15 +390,15 @@ class _PlayerSection extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Colors.black.withValues(alpha: 0.8),
-            Colors.black.withValues(alpha: 0.6),
+            Colors.black.withOpacity(0.8),
+            Colors.black.withOpacity(0.6),
           ],
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: isPlayerTurn
-              ? AppTheme.gold.withValues(alpha: 0.5)
-              : AppTheme.stoneGray.withValues(alpha: 0.3),
+              ? AppTheme.gold.withOpacity(0.5)
+              : AppTheme.stoneGray.withOpacity(0.3),
           width: 2,
         ),
       ),
@@ -412,7 +412,7 @@ class _PlayerSection extends StatelessWidget {
               shape: BoxShape.circle,
               gradient: RadialGradient(
                 colors: [
-                  AppTheme.getClassColor(character.className).withValues(alpha: 0.3),
+                  AppTheme.getClassColor(character.className).withOpacity(0.3),
                   Colors.transparent,
                 ],
               ),
@@ -509,10 +509,10 @@ class _HPBar extends StatelessWidget {
         Container(
           height: height,
           decoration: BoxDecoration(
-            color: Colors.black.withValues(alpha: 0.5),
+            color: Colors.black.withOpacity(0.5),
             borderRadius: BorderRadius.circular(height / 2),
             border: Border.all(
-              color: color.withValues(alpha: 0.3),
+              color: color.withOpacity(0.3),
               width: 1,
             ),
           ),
@@ -526,13 +526,13 @@ class _HPBar extends StatelessWidget {
               gradient: LinearGradient(
                 colors: [
                   color,
-                  color.withValues(alpha: 0.7),
+                  color.withOpacity(0.7),
                 ],
               ),
               borderRadius: BorderRadius.circular(height / 2),
               boxShadow: [
                 BoxShadow(
-                  color: color.withValues(alpha: 0.5),
+                  color: color.withOpacity(0.5),
                   blurRadius: 4,
                 ),
               ],
@@ -602,10 +602,10 @@ class _BattleLog extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.7),
+        color: Colors.black.withOpacity(0.7),
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: AppTheme.stoneGray.withValues(alpha: 0.3),
+          color: AppTheme.stoneGray.withOpacity(0.3),
           width: 1,
         ),
       ),
@@ -803,26 +803,26 @@ class _ActionButton extends StatelessWidget {
             end: Alignment.bottomCenter,
             colors: isDisabled
                 ? [
-                    AppTheme.stoneGray.withValues(alpha: 0.3),
-                    AppTheme.stoneGray.withValues(alpha: 0.2),
+                    AppTheme.stoneGray.withOpacity(0.3),
+                    AppTheme.stoneGray.withOpacity(0.2),
                   ]
                 : [
-                    color.withValues(alpha: 0.8),
-                    color.withValues(alpha: 0.5),
+                    color.withOpacity(0.8),
+                    color.withOpacity(0.5),
                   ],
           ),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isDisabled
-                ? AppTheme.stoneGray.withValues(alpha: 0.3)
-                : color.withValues(alpha: 0.8),
+                ? AppTheme.stoneGray.withOpacity(0.3)
+                : color.withOpacity(0.8),
             width: 2,
           ),
           boxShadow: isDisabled
               ? null
               : [
                   BoxShadow(
-                    color: color.withValues(alpha: 0.3),
+                    color: color.withOpacity(0.3),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),

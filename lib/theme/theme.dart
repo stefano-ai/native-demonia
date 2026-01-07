@@ -92,7 +92,7 @@ class AppTheme {
             offset: Offset(2, 2),
           ),
           Shadow(
-            color: hellfire.withValues(alpha: 0.5),
+            color: hellfire.withOpacity(0.5),
             blurRadius: 20,
             offset: const Offset(0, 0),
           ),
@@ -170,7 +170,7 @@ class AppTheme {
       elevation: 8,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
-        side: BorderSide(color: stoneGray.withValues(alpha: 0.5), width: 1),
+        side: BorderSide(color: stoneGray.withOpacity(0.5), width: 1),
       ),
     ),
     iconTheme: const IconThemeData(
@@ -184,12 +184,12 @@ class AppTheme {
         color: const Color(0xFF1A1410),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: darkGold.withValues(alpha: 0.5),
+          color: darkGold.withOpacity(0.5),
           width: 2,
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.5),
+            color: Colors.black.withOpacity(0.5),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -207,7 +207,7 @@ class AppTheme {
         ),
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: gold.withValues(alpha: 0.3),
+          color: gold.withOpacity(0.3),
           width: 1,
         ),
       );

@@ -1,41 +1,40 @@
 import 'package:flutter/material.dart';
-import '../models/character.dart';
 
 /// Manages all game assets including tiles, sprites, and UI elements
 class AssetManager {
   // Tile asset paths
   static const String stoneFloor = 'assets/tiles/stone_floor.png';
-  static const String grass = 'assets/tiles/grass.png'; // Note: Might be missing
-  static const String water = 'assets/tiles/water.png'; // Note: Might be missing
-  static const String woodFloor = 'assets/tiles/floor.png'; // Using floor.png as wood fallback
-  static const String wallStone = 'assets/tiles/stone_floor.png'; // Using stone_floor for wall for now
-  static const String wallWood = 'assets/tiles/floor.png';
-  static const String doorClosed = 'assets/tiles/stone_floor.png';
-  static const String doorOpen = 'assets/tiles/floor.png';
-  static const String chestClosed = 'assets/tiles/stone_floor.png';
-  static const String chestOpen = 'assets/tiles/floor.png';
-  static const String stairsDown = 'assets/tiles/stone_floor.png';
-  static const String stairsUp = 'assets/tiles/floor.png';
+  static const String grass = 'assets/tiles/grass.png';
+  static const String water = 'assets/tiles/water.png';
+  static const String woodFloor = 'assets/tiles/wood_floor.png';
+  static const String wallStone = 'assets/tiles/wall_stone.png';
+  static const String wallWood = 'assets/tiles/wall_wood.png';
+  static const String doorClosed = 'assets/tiles/door_closed.png';
+  static const String doorOpen = 'assets/tiles/door_open.png';
+  static const String chestClosed = 'assets/tiles/chest_closed.png';
+  static const String chestOpen = 'assets/tiles/chest_open.png';
+  static const String stairsDown = 'assets/tiles/stairs_down.png';
+  static const String stairsUp = 'assets/tiles/stairs_up.png';
 
   // Player sprites
-  static const String playerWarrior = 'assets/icons/app_icon.png'; // Fallback to app_icon
-  static const String playerMage = 'assets/icons/app_icon.png';
-  static const String playerRogue = 'assets/icons/app_icon.png';
+  static const String playerWarrior = 'assets/sprites/player_warrior.png';
+  static const String playerMage = 'assets/sprites/player_mage.png';
+  static const String playerRogue = 'assets/sprites/player_rogue.png';
 
   // Enemy sprites
-  static const String goblin = 'assets/icons/app_icon.png';
-  static const String orc = 'assets/icons/app_icon.png';
-  static const String troll = 'assets/icons/app_icon.png';
-  static const String skeleton = 'assets/icons/app_icon.png';
-  static const String ghost = 'assets/icons/app_icon.png';
-  static const String demon = 'assets/icons/app_icon.png';
-  static const String dragon = 'assets/icons/app_icon.png';
+  static const String goblin = 'assets/sprites/goblin.png';
+  static const String orc = 'assets/sprites/orc.png';
+  static const String troll = 'assets/sprites/troll.png';
+  static const String skeleton = 'assets/sprites/skeleton.png';
+  static const String ghost = 'assets/sprites/ghost.png';
+  static const String demon = 'assets/sprites/demon.png';
+  static const String dragon = 'assets/sprites/dragon.png';
 
   // NPC sprites
-  static const String npcMerchant = 'assets/icons/app_icon.png';
-  static const String npcGuard = 'assets/icons/app_icon.png';
-  static const String npcHealer = 'assets/icons/app_icon.png';
-  static const String npcQuestgiver = 'assets/icons/app_icon.png';
+  static const String npcMerchant = 'assets/sprites/npc_merchant.png';
+  static const String npcGuard = 'assets/sprites/npc_guard.png';
+  static const String npcHealer = 'assets/sprites/npc_healer.png';
+  static const String npcQuestgiver = 'assets/sprites/npc_questgiver.png';
 
   /// Get tile asset path based on tile type and walkability
   static String getTileAsset(String type, bool isWalkable) {
@@ -58,17 +57,15 @@ class AssetManager {
     }
   }
 
-  /// Get player sprite based on character class enum
-  static String getPlayerSprite(CharacterClass characterClass) {
-    switch (characterClass) {
-      case CharacterClass.fighter:
+  /// Get player sprite based on character class
+  static String getPlayerSprite(String characterClass) {
+    switch (characterClass.toLowerCase()) {
+      case 'warrior':
         return playerWarrior;
-      case CharacterClass.wizard:
+      case 'mage':
         return playerMage;
-      case CharacterClass.rogue:
+      case 'rogue':
         return playerRogue;
-      case CharacterClass.cleric:
-        return playerWarrior; // Fallback for cleric
       default:
         return playerWarrior;
     }
@@ -110,20 +107,24 @@ class AssetManager {
   /// Preload all game assets for smooth performance
   static Future<void> preloadAssets(BuildContext context) async {
     final imagesToLoad = [
+      // Tiles
       stoneFloor, grass, water, woodFloor,
       wallStone, wallWood, doorClosed, doorOpen,
       chestClosed, chestOpen, stairsDown, stairsUp,
+      
+      // Players
       playerWarrior, playerMage, playerRogue,
+      
+      // Enemies
       goblin, orc, troll, skeleton, ghost, demon, dragon,
+      
+      // NPCs
       npcMerchant, npcGuard, npcHealer, npcQuestgiver,
     ];
 
+    // Precache all images
     for (final imagePath in imagesToLoad) {
-      try {
-        await precacheImage(AssetImage(imagePath), context);
-      } catch (e) {
-        // Ignore errors for missing assets
-      }
+      await precacheImage(AssetImage(imagePath), context);
     }
   }
 }

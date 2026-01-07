@@ -39,10 +39,10 @@ class VillageScreen extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.5),
+                          color: Colors.black.withOpacity(0.5),
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                            color: AppTheme.darkGold.withValues(alpha: 0.5),
+                            color: AppTheme.darkGold.withOpacity(0.5),
                           ),
                         ),
                         child: const Icon(
@@ -76,7 +76,7 @@ class VillageScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: RadialGradient(
                     colors: [
-                      AppTheme.poison.withValues(alpha: 0.2),
+                      AppTheme.poison.withOpacity(0.2),
                       Colors.transparent,
                     ],
                   ),
@@ -96,17 +96,17 @@ class VillageScreen extends StatelessWidget {
                             shape: BoxShape.circle,
                             gradient: RadialGradient(
                               colors: [
-                                AppTheme.mana.withValues(alpha: 0.4),
-                                AppTheme.mana.withValues(alpha: 0.1),
+                                AppTheme.mana.withOpacity(0.4),
+                                AppTheme.mana.withOpacity(0.1),
                               ],
                             ),
                             border: Border.all(
-                              color: AppTheme.mana.withValues(alpha: 0.5),
+                              color: AppTheme.mana.withOpacity(0.5),
                               width: 2,
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: AppTheme.mana.withValues(alpha: 0.3),
+                                color: AppTheme.mana.withOpacity(0.3),
                                 blurRadius: 20,
                                 spreadRadius: 5,
                               ),
@@ -131,7 +131,7 @@ class VillageScreen extends StatelessWidget {
                     ),
 
                     // Buildings in corners
-                    const Positioned(
+                    Positioned(
                       left: 16,
                       top: 16,
                       child: _VillageBuilding(
@@ -140,7 +140,7 @@ class VillageScreen extends StatelessWidget {
                         color: AppTheme.ember,
                       ),
                     ),
-                    const Positioned(
+                    Positioned(
                       right: 16,
                       top: 16,
                       child: _VillageBuilding(
@@ -149,7 +149,7 @@ class VillageScreen extends StatelessWidget {
                         color: AppTheme.stoneGray,
                       ),
                     ),
-                    const Positioned(
+                    Positioned(
                       left: 16,
                       bottom: 16,
                       child: _VillageBuilding(
@@ -158,7 +158,7 @@ class VillageScreen extends StatelessWidget {
                         color: AppTheme.poison,
                       ),
                     ),
-                    const Positioned(
+                    Positioned(
                       right: 16,
                       bottom: 16,
                       child: _VillageBuilding(
@@ -239,10 +239,10 @@ class VillageScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 24, vertical: 12),
                     decoration: BoxDecoration(
-                      color: Colors.black.withValues(alpha: 0.6),
+                      color: Colors.black.withOpacity(0.6),
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color: AppTheme.gold.withValues(alpha: 0.5),
+                        color: AppTheme.gold.withOpacity(0.5),
                       ),
                     ),
                     child: Row(
@@ -280,7 +280,7 @@ class VillageScreen extends StatelessWidget {
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        backgroundColor: AppTheme.mana.withValues(alpha: 0.9),
+        backgroundColor: AppTheme.mana.withOpacity(0.9),
         content: Row(
           children: [
             const Icon(Icons.favorite, color: Colors.white),
@@ -321,7 +321,7 @@ class VillageScreen extends StatelessWidget {
             ),
             borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
             border: Border.all(
-              color: AppTheme.gold.withValues(alpha: 0.5),
+              color: AppTheme.gold.withOpacity(0.5),
               width: 2,
             ),
           ),
@@ -332,7 +332,7 @@ class VillageScreen extends StatelessWidget {
                 width: 40,
                 height: 4,
                 decoration: BoxDecoration(
-                  color: AppTheme.gold.withValues(alpha: 0.5),
+                  color: AppTheme.gold.withOpacity(0.5),
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -350,7 +350,7 @@ class VillageScreen extends StatelessWidget {
               Text(
                 _getShopDescription(shopName),
                 style: TextStyle(
-                  color: AppTheme.boneWhite.withValues(alpha: 0.7),
+                  color: AppTheme.boneWhite.withOpacity(0.7),
                   fontSize: 14,
                 ),
               ),
@@ -363,13 +363,13 @@ class VillageScreen extends StatelessWidget {
                       Icon(
                         _getShopIcon(shopName),
                         size: 64,
-                        color: AppTheme.gold.withValues(alpha: 0.3),
+                        color: AppTheme.gold.withOpacity(0.3),
                       ),
                       const SizedBox(height: 16),
                       Text(
                         'Shop inventory coming soon!',
                         style: TextStyle(
-                          color: AppTheme.boneWhite.withValues(alpha: 0.6),
+                          color: AppTheme.boneWhite.withOpacity(0.6),
                           fontSize: 16,
                         ),
                       ),
@@ -401,7 +401,7 @@ class VillageScreen extends StatelessWidget {
           ),
           borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
           border: Border.all(
-            color: AppTheme.gold.withValues(alpha: 0.5),
+            color: AppTheme.gold.withOpacity(0.5),
             width: 2,
           ),
         ),
@@ -433,13 +433,13 @@ class VillageScreen extends StatelessWidget {
                       Icon(
                         Icons.inbox,
                         size: 48,
-                        color: AppTheme.ashGray.withValues(alpha: 0.5),
+                        color: AppTheme.ashGray.withOpacity(0.5),
                       ),
                       const SizedBox(height: 12),
                       Text(
                         'No items waiting',
                         style: TextStyle(
-                          color: AppTheme.boneWhite.withValues(alpha: 0.6),
+                          color: AppTheme.boneWhite.withOpacity(0.6),
                           fontSize: 16,
                         ),
                       ),
@@ -451,7 +451,7 @@ class VillageScreen extends StatelessWidget {
                     Text(
                       '${mailbox.length} items waiting',
                       style: TextStyle(
-                        color: AppTheme.boneWhite.withValues(alpha: 0.8),
+                        color: AppTheme.boneWhite.withOpacity(0.8),
                         fontSize: 16,
                       ),
                     ),
@@ -525,10 +525,10 @@ class _VillageBuilding extends StatelessWidget {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.2),
+            color: color.withOpacity(0.2),
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: color.withValues(alpha: 0.5),
+              color: color.withOpacity(0.5),
             ),
           ),
           child: Icon(icon, color: color, size: 20),
@@ -573,13 +573,13 @@ class _VillageButton extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              color.withValues(alpha: 0.2),
-              color.withValues(alpha: 0.1),
+              color.withOpacity(0.2),
+              color.withOpacity(0.1),
             ],
           ),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: color.withValues(alpha: 0.4),
+            color: color.withOpacity(0.4),
             width: 2,
           ),
         ),
@@ -603,7 +603,7 @@ class _VillageButton extends StatelessWidget {
               description,
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: AppTheme.boneWhite.withValues(alpha: 0.6),
+                color: AppTheme.boneWhite.withOpacity(0.6),
                 fontSize: 10,
               ),
             ),

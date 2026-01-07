@@ -151,10 +151,10 @@ class _CharacterSelectScreenState extends State<CharacterSelectScreen>
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.5),
+                    color: Colors.black.withOpacity(0.5),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: AppTheme.darkGold.withValues(alpha: 0.5),
+                      color: AppTheme.darkGold.withOpacity(0.5),
                       width: 1,
                     ),
                   ),
@@ -170,7 +170,7 @@ class _CharacterSelectScreenState extends State<CharacterSelectScreen>
                       border: InputBorder.none,
                       hintText: 'Enter your name',
                       hintStyle: TextStyle(
-                        color: AppTheme.ashGray.withValues(alpha: 0.5),
+                        color: AppTheme.ashGray.withOpacity(0.5),
                       ),
                       prefixIcon: const Icon(
                         Icons.edit,
@@ -214,7 +214,7 @@ class _CharacterSelectScreenState extends State<CharacterSelectScreen>
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: AppTheme.hellfire.withValues(alpha: 0.3),
+                          color: AppTheme.hellfire.withOpacity(0.3),
                           blurRadius: 12,
                           spreadRadius: 2,
                         ),
@@ -276,7 +276,7 @@ class _ClassCard extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            classColor.withValues(alpha: 0.2),
+            classColor.withOpacity(0.2),
             const Color(0xFF1A1010),
             const Color(0xFF0A0808),
           ],
@@ -284,14 +284,14 @@ class _ClassCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: isSelected
-              ? classColor.withValues(alpha: 0.8)
-              : AppTheme.stoneGray.withValues(alpha: 0.3),
+              ? classColor.withOpacity(0.8)
+              : AppTheme.stoneGray.withOpacity(0.3),
           width: isSelected ? 2 : 1,
         ),
         boxShadow: isSelected
             ? [
                 BoxShadow(
-                  color: classColor.withValues(alpha: 0.3),
+                  color: classColor.withOpacity(0.3),
                   blurRadius: 16,
                   spreadRadius: 2,
                 ),
@@ -310,12 +310,12 @@ class _ClassCard extends StatelessWidget {
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
-                    classColor.withValues(alpha: 0.3),
+                    classColor.withOpacity(0.3),
                     Colors.transparent,
                   ],
                 ),
                 border: Border.all(
-                  color: classColor.withValues(alpha: 0.5),
+                  color: classColor.withOpacity(0.5),
                   width: 2,
                 ),
               ),
@@ -350,7 +350,7 @@ class _ClassCard extends StatelessWidget {
                       classDef.description,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: AppTheme.boneWhite.withValues(alpha: 0.8),
+                        color: AppTheme.boneWhite.withOpacity(0.8),
                         fontSize: 13,
                         height: 1.4,
                       ),
@@ -362,10 +362,10 @@ class _ClassCard extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Colors.black.withValues(alpha: 0.4),
+                        color: Colors.black.withOpacity(0.4),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: classColor.withValues(alpha: 0.2),
+                          color: classColor.withOpacity(0.2),
                           width: 1,
                         ),
                       ),
@@ -397,10 +397,10 @@ class _ClassCard extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Colors.black.withValues(alpha: 0.4),
+                        color: Colors.black.withOpacity(0.4),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: classColor.withValues(alpha: 0.2),
+                          color: classColor.withOpacity(0.2),
                           width: 1,
                         ),
                       ),
@@ -432,7 +432,7 @@ class _ClassCard extends StatelessWidget {
                       'Starting Abilities',
                       style: GoogleFonts.cinzel(
                         fontSize: 12,
-                        color: classColor.withValues(alpha: 0.8),
+                        color: classColor.withOpacity(0.8),
                         letterSpacing: 1,
                       ),
                     ),
@@ -448,10 +448,10 @@ class _ClassCard extends StatelessWidget {
                                   vertical: 4,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: classColor.withValues(alpha: 0.2),
+                                  color: classColor.withOpacity(0.2),
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: classColor.withValues(alpha: 0.4),
+                                    color: classColor.withOpacity(0.4),
                                     width: 1,
                                   ),
                                 ),
@@ -491,7 +491,7 @@ class _StatRow extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(
+          style: TextStyle(
             color: AppTheme.ashGray,
             fontSize: 12,
           ),
@@ -525,10 +525,10 @@ class _AbilityChip extends StatelessWidget {
       width: 52,
       padding: const EdgeInsets.symmetric(vertical: 6),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: color.withValues(alpha: 0.3),
+          color: color.withOpacity(0.3),
           width: 1,
         ),
       ),
@@ -537,7 +537,7 @@ class _AbilityChip extends StatelessWidget {
           Text(
             label,
             style: TextStyle(
-              color: color.withValues(alpha: 0.7),
+              color: color.withOpacity(0.7),
               fontSize: 9,
               fontWeight: FontWeight.w600,
             ),
@@ -553,7 +553,7 @@ class _AbilityChip extends StatelessWidget {
           Text(
             modStr,
             style: TextStyle(
-              color: color.withValues(alpha: 0.7),
+              color: color.withOpacity(0.7),
               fontSize: 10,
             ),
           ),
